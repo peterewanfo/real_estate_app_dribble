@@ -1,0 +1,1 @@
+enum HomePages { search, message, home, favourite, profile }
