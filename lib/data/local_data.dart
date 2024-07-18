@@ -13,7 +13,7 @@ class PlacesData {
     },
     {
       "title": "Sedova St., 221",
-      "imgUrl": "img_places_9",
+      "imgUrl": "img_places_10",
       "isFullView": false,
     },
     {

@@ -64,40 +64,40 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             BottomNavWidget(
               isSelected: _currentActiveHomePageIndex == HomePages.search,
-              activeIconUrl: "ic_search".svg,
-              inactiveIconUrl: "ic_search".svg,
+              activeIconUrl: "ic_search",
+              inactiveIconUrl: "ic_search",
               onTap: () {
                 changeActiveHomePageIndex(HomePages.search);
               },
             ),
             BottomNavWidget(
               isSelected: _currentActiveHomePageIndex == HomePages.message,
-              activeIconUrl: "ic_message".svg,
-              inactiveIconUrl: "ic_message".svg,
+              activeIconUrl: "ic_message",
+              inactiveIconUrl: "ic_message",
               onTap: () {
                 changeActiveHomePageIndex(HomePages.message);
               },
             ),
             BottomNavWidget(
               isSelected: _currentActiveHomePageIndex == HomePages.home,
-              activeIconUrl: "ic_home".svg,
-              inactiveIconUrl: "ic_home_inactive".svg,
+              activeIconUrl: "ic_home",
+              inactiveIconUrl: "ic_home_inactive",
               onTap: () {
                 changeActiveHomePageIndex(HomePages.home);
               },
             ),
             BottomNavWidget(
               isSelected: _currentActiveHomePageIndex == HomePages.favourite,
-              activeIconUrl: "ic_favourite".svg,
-              inactiveIconUrl: "ic_favourite".svg,
+              activeIconUrl: "ic_favourite",
+              inactiveIconUrl: "ic_favourite",
               onTap: () {
                 changeActiveHomePageIndex(HomePages.favourite);
               },
             ),
             BottomNavWidget(
               isSelected: _currentActiveHomePageIndex == HomePages.profile,
-              activeIconUrl: "ic_profile".svg,
-              inactiveIconUrl: "ic_profile".svg,
+              activeIconUrl: "ic_profile",
+              inactiveIconUrl: "ic_profile",
               onTap: () {
                 changeActiveHomePageIndex(HomePages.profile);
               },

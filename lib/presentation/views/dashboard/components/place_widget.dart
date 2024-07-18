@@ -17,7 +17,6 @@ class PlaceWidget extends StatelessWidget {
   final bool isFullView;
   final String title;
 
-
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -41,6 +40,7 @@ class PlaceWidget extends StatelessWidget {
               bottom: 10.h,
             ),
             child: ClipRRect(
+              borderRadius: BorderRadius.circular(30),
               child: BackdropFilter(
                 filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
                 child: Container(
@@ -53,9 +53,11 @@ class PlaceWidget extends StatelessWidget {
                   child: Stack(
                     children: [
                       Align(
-                        alignment: isFullView ? Alignment.center : Alignment.centerLeft,
+                        alignment: isFullView
+                            ? Alignment.center
+                            : Alignment.centerLeft,
                         child: Padding(
-                          padding: EdgeInsets.only(left: isFullView ? 0 :8.0),
+                          padding: EdgeInsets.only(left: isFullView ? 0 : 8.0),
                           child: Text(
                             title,
                             textAlign: TextAlign.center,
@@ -88,7 +90,7 @@ class PlaceWidget extends StatelessWidget {
                           child: Icon(
                             Icons.arrow_forward_ios_rounded,
                             size: 12,
-                            color: Theme.of(context).colorScheme.onBackground,
+                            color: CustomColors.backgroundTertiary3,
                           ),
                         ),
                       ),
@@ -96,15 +98,10 @@ class PlaceWidget extends StatelessWidget {
                   ),
                 ),
               ),
-            )
-                .animate()
-                .slideX(
+            ).animate().scaleX(
                   delay: const Duration(seconds: 1) * 0.5,
                   duration: const Duration(seconds: 1),
-                  curve: Curves.easeIn,
-                )
-                .fade(
-                  duration: const Duration(seconds: 1),
+                  alignment: Alignment.centerLeft,
                   curve: Curves.easeIn,
                 ),
           ),

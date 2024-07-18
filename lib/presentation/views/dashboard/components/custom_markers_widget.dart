@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:moniepoint_dribble_task/presentation/styles/custom_colors.dart';
 import 'package:moniepoint_dribble_task/utils/extension.dart';
@@ -32,9 +33,10 @@ class CustomMarkerWidget extends StatelessWidget {
         child: Builder(builder: (context) {
           if (showPrice) {
             return Text(
-              price,
+              price.toString(), //price
               style: TextStyle(
-                color: Theme.of(context).colorScheme.onPrimary,
+                color: CustomColors.textSecondary,
+                fontSize: 14.sp,
               ),
             );
           } else {

@@ -8,6 +8,7 @@ import 'package:moniepoint_dribble_task/presentation/styles/custom_colors.dart';
 import 'package:moniepoint_dribble_task/presentation/styles/custom_style.dart';
 import 'package:moniepoint_dribble_task/presentation/views/dashboard/components/custom_margin.dart';
 import 'package:moniepoint_dribble_task/presentation/views/dashboard/components/search_header_widget.dart';
+import 'package:moniepoint_dribble_task/presentation/views/dashboard/components/round_option_widget.dart';
 import 'package:moniepoint_dribble_task/utils/extension.dart';
 
 import '../components/custom_markers_widget.dart';
@@ -70,7 +71,7 @@ class _SearchPageState extends State<SearchPage> {
           ),
           Positioned(
             left: 100,
-            top: 200,
+            top: 180,
             child: CustomMarkerWidget(
               showPrice: showPrice,
               price: "10,3 mn P",
@@ -78,7 +79,7 @@ class _SearchPageState extends State<SearchPage> {
           ),
           Positioned(
             left: 115,
-            top: 250,
+            top: 230,
             child: CustomMarkerWidget(
               showPrice: showPrice,
               price: "11 mn P",
@@ -86,7 +87,7 @@ class _SearchPageState extends State<SearchPage> {
           ),
           Positioned(
             right: 20,
-            top: 280,
+            top: 260,
             child: CustomMarkerWidget(
               showPrice: showPrice,
               price: "7,8 mn P",
@@ -94,7 +95,7 @@ class _SearchPageState extends State<SearchPage> {
           ),
           Positioned(
             right: 20,
-            top: 430,
+            top: 410,
             child: CustomMarkerWidget(
               showPrice: showPrice,
               price: "13,3 mn P",
@@ -102,7 +103,7 @@ class _SearchPageState extends State<SearchPage> {
           ),
           Positioned(
             left: 50,
-            top: 480,
+            top: 460,
             child: CustomMarkerWidget(
               showPrice: showPrice,
               price: "8,5 mn P",
@@ -110,7 +111,7 @@ class _SearchPageState extends State<SearchPage> {
           ),
           Positioned(
             right: 50,
-            top: 570,
+            top: 550,
             child: CustomMarkerWidget(
               showPrice: showPrice,
               price: "6,95 mn P",
@@ -126,44 +127,43 @@ class _SearchPageState extends State<SearchPage> {
                 ),
                 child: Column(
                   children: [
-                    InkWell(
+                    
+                    RoundOptionWidget(
+                      iconUrl: "ic_wallet",
+                      iconUrlActive: "ic_wallet",
+                      backgroundColor: CustomColors.backgroundWhite.withOpacity(0.6),
+                      width: 50.w,
+                      height: 50.h,
                       onTap: () {
                         setState(() {
                           showVariants = !showVariants;
                         });
                       },
-                      child: Container(
-                        height: 50.h,
-                        width: 50.w,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: CustomColors.backgroundWhite.withOpacity(0.6),
-                        ),
-                        child: SvgPicture.asset(
-                          "ic_wallet".svg,
-                          fit: BoxFit.scaleDown,
-                        ),
-                      ).animate().scale(
-                            duration: const Duration(seconds: 1),
-                            curve: Curves.easeIn,
-                          ),
-                    ).noShadow,
+                    ),
                     const YMargin(4),
-                    Container(
-                      height: 50.h,
+                    RoundOptionWidget(
+                      iconUrl: "ic_send",
+                      iconUrlActive: "ic_send",
+                      backgroundColor: CustomColors.backgroundWhite.withOpacity(0.6),
                       width: 50.w,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: CustomColors.backgroundWhite.withOpacity(0.6),
-                      ),
-                      child: SvgPicture.asset(
-                        "ic_send".svg,
-                        fit: BoxFit.scaleDown,
-                      ),
-                    ).animate().scale(
-                          duration: const Duration(seconds: 1),
-                          curve: Curves.easeIn,
-                        ),
+                      height: 50.h,
+                      onTap: () {},
+                    ),
+                    // Container(
+                    //   height: 50.h,
+                    //   width: 50.w,
+                    //   decoration: BoxDecoration(
+                    //     shape: BoxShape.circle,
+                    //     color: CustomColors.backgroundWhite.withOpacity(0.6),
+                    //   ),
+                    //   child: SvgPicture.asset(
+                    //     "ic_send".svg,
+                    //     fit: BoxFit.scaleDown,
+                    //   ),
+                    // ).animate().scale(
+                    //       duration: const Duration(seconds: 1),
+                    //       curve: Curves.easeIn,
+                    //     ),
                   ],
                 ),
               ),
@@ -202,7 +202,6 @@ class _SearchPageState extends State<SearchPage> {
                           setState(() {
                             showPrice = showPrice = true;
                             showVariants = !showVariants;
-                            
                           });
                         },
                       ),
@@ -223,7 +222,6 @@ class _SearchPageState extends State<SearchPage> {
                           setState(() {
                             showPrice = false;
                             showVariants = !showVariants;
-                            
                           });
                         },
                       ),
@@ -232,7 +230,7 @@ class _SearchPageState extends State<SearchPage> {
                 ).animate(onInit: (controller) {
                   variantAnimationController = controller;
                 }).scale(
-                  duration: const Duration(milliseconds: 420),
+                  duration: const Duration(milliseconds: 550),
                   alignment: Alignment.bottomLeft,
                 ),
               ),
