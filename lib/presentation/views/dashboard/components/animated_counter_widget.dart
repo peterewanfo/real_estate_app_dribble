@@ -17,7 +17,7 @@ class AnimatedCounterWidget extends StatefulWidget {
   });
 
   @override
-  _AnimatedCounterWidgetState createState() => _AnimatedCounterWidgetState();
+  State<AnimatedCounterWidget> createState() => _AnimatedCounterWidgetState();
 }
 
 class _AnimatedCounterWidgetState extends State<AnimatedCounterWidget>

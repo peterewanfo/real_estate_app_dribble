@@ -3,7 +3,6 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:moniepoint_dribble_task/presentation/styles/custom_colors.dart';
-import 'package:moniepoint_dribble_task/presentation/styles/custom_style.dart';
 import 'package:moniepoint_dribble_task/presentation/views/dashboard/components/custom_margin.dart';
 import 'package:moniepoint_dribble_task/utils/extension.dart';
 
@@ -68,7 +67,7 @@ class _SearchHeaderWidgetState extends State<SearchHeaderWidget> {
                       decoration: const InputDecoration(
                         fillColor: Colors.transparent,
                         filled: true,
-                        contentPadding: EdgeInsets.symmetric(vertical: 2),
+                        contentPadding: EdgeInsets.zero,
                         border: OutlineInputBorder(
                           borderSide: BorderSide.none,
                         ),
