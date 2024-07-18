@@ -26,47 +26,34 @@ class _BottomNavWidgetState extends State<BottomNavWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      // onTap: onTap,
-      child: AnimatedContainer(
-        margin: const EdgeInsets.all(2.0),
-        decoration: BoxDecoration(
-          color: widget.isSelected && isAnimationCompleted
-              ? CustomColors.backgroundPrimary
-              : CustomColors.backgroundTertiary3,
-          shape: BoxShape.circle,
-        ),
-        duration: const Duration(milliseconds: 500),
-        child: RoundOptionWidget(
-          backgroundColor: Colors.transparent,
-          awaitAnimationBeforeClick: false,
-          height: 46.h,
-          width: 46.w,
-          isActive: widget.isSelected,
-          iconUrl: widget.inactiveIconUrl,
-          iconUrlActive: widget.activeIconUrl,
-          onTap: (){
-            setState(() {
-              isAnimationCompleted = false;
-            });
-            widget.onTap.call();
-          },
-          animationCompletionEvent: (){
-            setState(() {
-              isAnimationCompleted = true;
-            });
-          },
-        ),
-
-        // child: SizedBox(
-        //   height: 48.h,
-        //   width: 46.w,
-        //   child: SvgPicture.asset(
-        //     isSelected
-        //       ? activeIconUrl : inactiveIconUrl,
-        //     fit: BoxFit.scaleDown,
-        //   ),
-        // ),
+    return AnimatedContainer(
+      margin: const EdgeInsets.all(2.0),
+      decoration: BoxDecoration(
+        color: widget.isSelected && isAnimationCompleted
+            ? CustomColors.backgroundPrimary
+            : CustomColors.backgroundTertiary3,
+        shape: BoxShape.circle,
+      ),
+      duration: const Duration(milliseconds: 500),
+      child: RoundOptionWidget(
+        backgroundColor: Colors.transparent,
+        // awaitAnimationBeforeClick: false,
+        height: 46.h,
+        width: 46.w,
+        isActive: widget.isSelected,
+        iconUrl: widget.inactiveIconUrl,
+        iconUrlActive: widget.activeIconUrl,
+        onTap: (){
+          setState(() {
+            isAnimationCompleted = false;
+          });
+          widget.onTap.call();
+        },
+        animationCompletionEvent: (){
+          setState(() {
+            isAnimationCompleted = true;
+          });
+        },
       ),
     );
   }

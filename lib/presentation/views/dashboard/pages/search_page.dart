@@ -149,21 +149,6 @@ class _SearchPageState extends State<SearchPage> {
                       height: 50.h,
                       onTap: () {},
                     ),
-                    // Container(
-                    //   height: 50.h,
-                    //   width: 50.w,
-                    //   decoration: BoxDecoration(
-                    //     shape: BoxShape.circle,
-                    //     color: CustomColors.backgroundWhite.withOpacity(0.6),
-                    //   ),
-                    //   child: SvgPicture.asset(
-                    //     "ic_send".svg,
-                    //     fit: BoxFit.scaleDown,
-                    //   ),
-                    // ).animate().scale(
-                    //       duration: const Duration(seconds: 1),
-                    //       curve: Curves.easeIn,
-                    //     ),
                   ],
                 ),
               ),
